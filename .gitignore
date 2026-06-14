@@ -1,0 +1,28 @@
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+
+# Ansible
+*.retry
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

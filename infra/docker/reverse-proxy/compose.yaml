@@ -1,0 +1,16 @@
+services:
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      - whoami
+    restart: unless-stopped
+  
+  whoami:
+    image: traefik/whoami
+    container_name: whoami
+    restart: unless-stopped

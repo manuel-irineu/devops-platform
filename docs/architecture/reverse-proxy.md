@@ -19,3 +19,6 @@ Nginx Reverse Proxy
   |
   v
 Whoami Container
+
+whoami.local -> whoami
+nginx.local -> nginx-web

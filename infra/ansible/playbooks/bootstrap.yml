@@ -1,0 +1,17 @@
+---
+- name: Bootstrap DevOps lab VM
+  hosts: local
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Install base packages
+      ansible.builtin.apt:
+        name:
+          - curl
+          - git
+          - htop
+          - vim
+          - wget
+        state: present
+        update_cache: true

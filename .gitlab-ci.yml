@@ -11,3 +11,9 @@ validate_docker_compose:
   script:
     - docker compose -f infra/docker/reverse-proxy/compose.yaml config
     - docker compose -f infra/monitoring/compose.yaml config
+
+validate_yaml:
+  stage: validate
+  image: cytopia/yamllint:latest
+  script:
+    - yamllint .

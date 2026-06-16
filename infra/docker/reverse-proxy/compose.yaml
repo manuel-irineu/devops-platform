@@ -9,12 +9,12 @@ services:
     depends_on:
       - whoami
     restart: unless-stopped
-  
+
   whoami:
     image: traefik/whoami
     container_name: whoami
     restart: unless-stopped
-  
+
   nginx-web:
     image: nginx:alpine
     container_name: nginx-web

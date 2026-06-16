@@ -33,7 +33,7 @@ services:
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
 
       - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
-      
+
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -45,7 +45,7 @@ services:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
-      - /var/lib/docker:/var/lib/docker:ro 
- 
+      - /var/lib/docker:/var/lib/docker:ro
+
 volumes:
-  grafana-data:  
+  grafana-data:

@@ -14,6 +14,8 @@ validate_docker_compose:
 
 validate_yaml:
   stage: validate
-  image: cytopia/yamllint:latest
+  image: python:3.13-alpine
+  before_script:
+    - pip install yamllint
   script:
     - yamllint .

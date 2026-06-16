@@ -19,3 +19,9 @@ validate_yaml:
     - pip install yamllint
   script:
     - yamllint .
+
+validate_ansible:
+  stage: validate
+  image: cytopia/ansible:latest
+  script:
+    - ansible-playbook --syntax-check -i infra/ansible/inventory infra/ansible/playbooks/test.yml    

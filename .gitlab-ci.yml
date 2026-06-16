@@ -1,7 +1,7 @@
 stages:
   - validate
 
-validate:docker-compose:
+validate_docker_compose:
   stage: validate
   image: docker:latest
   services:

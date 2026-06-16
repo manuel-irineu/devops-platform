@@ -1,0 +1,13 @@
+stages:
+  - validate
+
+validate:docker-compose:
+  stage: validate
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - docker compose -f infra/docker/reverse-proxy/compose.yaml config
+    - docker compose -f infra/monitoring/compose.yaml config

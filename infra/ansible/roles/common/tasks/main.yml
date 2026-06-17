@@ -1,0 +1,11 @@
+---
+- name: Install base packages
+  ansible.builtin.apt:
+    name:
+      - curl
+      - git
+      - htop
+      - vim
+      - wget
+    state: present
+    update_cache: true

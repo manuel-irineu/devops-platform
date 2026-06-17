@@ -24,4 +24,4 @@ validate_ansible:
   stage: validate
   image: cytopia/ansible:latest
   script:
-    - ansible-playbook --syntax-check -i infra/ansible/inventory infra/ansible/playbooks/test.yml
+    - ansible-playbook infra/ansible/playbooks/bootstrap.yml --syntax-check

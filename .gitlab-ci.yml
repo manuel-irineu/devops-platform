@@ -23,5 +23,12 @@ validate_yaml:
 validate_ansible:
   stage: validate
   image: cytopia/ansible:latest
+  variables:
+    ANSIBLE_CONFIG: ansible.cfg
+    ANSIBLE_ROLES_PATH: infra/ansible/roles
   script:
-    - ansible-playbook infra/ansible/playbooks/bootstrap.yml --syntax-check
+    - >
+      ansible-playbook
+      --syntax-check
+      -i infra/ansible/inventory
+      infra/ansible/playbooks/bootstrap.yml

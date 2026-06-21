@@ -4,10 +4,6 @@
   become: true
   gather_facts: true
 
-  vars:
-    project_root: "{{ playbook_dir }}/../../.."
-
   roles:
     - common
     - docker
-    - compose_stacks

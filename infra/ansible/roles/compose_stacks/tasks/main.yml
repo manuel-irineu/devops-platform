@@ -1,0 +1,22 @@
+---
+- name: Deploy reverse proxy stack
+  ansible.builtin.command:
+    cmd: docker compose -f infra/docker/reverse-proxy/compose.yaml up -d
+    chdir: "{{ project_root }}"
+  register: reverse_proxy_stack
+  changed_when: >
+    'Created' in reverse_proxy_stack.stdout
+    or 'Started' in reverse_proxy_stack.stdout
+    or 'Recreated' in reverse_proxy_stack.stdout
+    or 'Pulling' in reverse_proxy_stack.stdout
+
+- name: Deploy monitoring stack
+  ansible.builtin.command:
+    cmd: docker compose -f infra/monitoring/compose.yaml up -d
+    chdir: "{{ project_root }}"
+  register: monitoring_stack
+  changed_when: >
+    'Created' in monitoring_stack.stdout
+    or 'Started' in monitoring_stack.stdout
+    or 'Recreated' in monitoring_stack.stdout
+    or 'Pulling' in monitoring_stack.stdout

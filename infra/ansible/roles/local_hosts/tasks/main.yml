@@ -1,0 +1,14 @@
+---
+- name: Ensure whoami.local points to localhost
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: '^127\.0\.0\.1\s+whoami\.local$'
+    line: '127.0.0.1 whoami.local'
+    state: present
+
+- name: Ensure nginx.local points to localhost
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: '^127\.0\.0\.1\s+nginx\.local$'
+    line: '127.0.0.1 nginx.local'
+    state: present
